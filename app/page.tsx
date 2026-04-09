@@ -1,10 +1,18 @@
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { SignupForm } from "./signup-form";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start"></main>
+    <div className="flex flex-col flex-1 items-center justify-center bg-background font-sans">
+      <main className="flex flex-1 w-full max-w-lg flex-col items-center justify-between py-32 px-16 sm:items-start">
+        <Card className="w-full">
+          <CardTitle className="px-6">Sign up for the latest events</CardTitle>
+          <CardContent>
+            <SignupForm />
+          </CardContent>
+        </Card>
+      </main>
     </div>
   );
 }
