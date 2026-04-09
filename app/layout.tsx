@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "INTRNT SIGNUP",
+  title: "Embrace Signup",
   description: "For the latest from your BF",
 };
 
