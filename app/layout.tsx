@@ -47,7 +47,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <main className="flex flex-col flex-1 pt-40 pb-6 px-4 items-center bg-background font-sans">
+            {children}
+          </main>
           <Toaster />
         </ThemeProvider>
       </body>

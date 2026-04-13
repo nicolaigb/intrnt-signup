@@ -25,7 +25,7 @@ const schema = z.object({
 export function SignupForm() {
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
-    mode: "onTouched",
+    mode: "onSubmit",
     defaultValues: {
       name: "",
       email: "",
@@ -33,8 +33,13 @@ export function SignupForm() {
   });
 
   const onSubmit = async (data: z.infer<typeof schema>) => {
-    await createSignup(data);
+    const message = await createSignup(data);
+    if (message) {
+      toast.error(message, { position: "bottom-center" });
+      return;
+    }
     toast("Keep it locked.", { position: "bottom-center" });
+    form.reset();
   };
 
   return (
